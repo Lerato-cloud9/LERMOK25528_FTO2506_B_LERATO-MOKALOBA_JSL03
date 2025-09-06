@@ -22,6 +22,14 @@ while (
   ).toLowerCase();
 }
 
+//Store task 1 in the array as an object with ID
+tasks.push({
+  id: 1,
+  title:task1Title,
+  description: task1Description,
+  status: task1Status,
+})
+
 // Repeat the same steps for task 2
 const task2Title = prompt("Enter task 2 title:");
 const task2Description = prompt("Enter task 2 description:");
