@@ -30,9 +30,6 @@ tasks.push({
   status: task1Status,
 })
 
-// ===== Add up to 3 more tasks =====
-let newTaskCount= 0;
-
 // Repeat the same steps for task 2
 const task2Title = prompt("Enter task 2 title:");
 const task2Description = prompt("Enter task 2 description:");
@@ -58,6 +55,10 @@ tasks.push({
   description: task2Description,
   status: task2Status
 });
+
+// ===== Add up to 3 more tasks =====
+let newTaskCount= 0;
+
 
 // Check if task1 is done, and log it if so
 if (task1Status === "done") {
