@@ -97,6 +97,12 @@ if (newTaskCount === 3) {
   alert("There are enough tasks on your board, please check them in the console.");
 }
 
+// Log all tasks
+console.log("=== All Tasks ===");
+tasks.forEach(task => {
+  console.log(`ID: ${task.id}, Title: ${task.title}, Description: ${task.description}, Status: ${task.status}`);
+});
+
 
 // Filter and log only completed tasks (status: "done")
 const completedTasks = tasks.filter(task => task.status === "done");
