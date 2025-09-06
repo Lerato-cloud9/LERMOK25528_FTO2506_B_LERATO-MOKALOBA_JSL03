@@ -88,6 +88,11 @@ while (newStatus !== "todo" && newStatus !== "doing" && newStatus !== "done") {
       status: newStatus
     });
 
+    // Alert if task limit reached
+if (newTaskCount === 3) {
+  alert("There are enough tasks on your board, please check them in the console.");
+}
+
 
 // Check if task2 is done, and log it if so
 if (task2Status === "done") {
