@@ -62,6 +62,8 @@ let newTaskCount = 0;
 while (newTaskCount < 3) {
     let addMore = prompt("Do you want to add another task? (yes/no)").toLowerCase();
 
+}
+
   if (addMore === "yes") {
     // Ask for new task details
     const newTitle = prompt("Enter task " + (tasks.length + 1) + " title:");
