@@ -57,9 +57,18 @@ tasks.push({
 });
 
 // ===== Add up to 3 more tasks =====
-let newTaskCount= 0;
+let newTaskCount = 0;
 
+while (newTaskCount < 3) {
+    let addMore = prompt("Do you want to add another task? (yes/no)").toLowerCase();
 
+  if (addMore === "yes") {
+    // Ask for new task details
+    const newTitle = prompt("Enter task " + (tasks.length + 1) + " title:");
+    const newDescription = prompt("Enter task " + (tasks.length + 1) + " description:");
+    let newStatus = prompt("Enter task " + (tasks.length + 1) + " status (todo, doing, done):").toLowerCase();
+}
+  
 // Check if task1 is done, and log it if so
 if (task1Status === "done") {
   console.log("Title: " + task1Title + ", status: " + task1Status);
