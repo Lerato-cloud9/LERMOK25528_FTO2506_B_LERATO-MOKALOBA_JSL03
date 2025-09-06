@@ -80,6 +80,14 @@ while (newStatus !== "todo" && newStatus !== "doing" && newStatus !== "done") {
       newStatus = prompt("Enter task " + (tasks.length + 1) + " status (todo, doing, done):").toLowerCase();
     }
 
+     // Store new task in the array
+    tasks.push({
+      id: tasks.length + 1,
+      title: newTitle,
+      description: newDescription,
+      status: newStatus
+    });
+
 
 // Check if task2 is done, and log it if so
 if (task2Status === "done") {
