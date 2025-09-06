@@ -74,6 +74,13 @@ if (task1Status === "done") {
   console.log("Title: " + task1Title + ", status: " + task1Status);
 }
 
+//Validate status for new tasks
+while (newStatus !== "todo" && newStatus !== "doing" && newStatus !== "done") {
+      alert("Invalid status. Please enter 'todo', 'doing', or 'done'.");
+      newStatus = prompt("Enter task " + (tasks.length + 1) + " status (todo, doing, done):").toLowerCase();
+    }
+
+
 // Check if task2 is done, and log it if so
 if (task2Status === "done") {
   console.log("Title: " + task2Title + ", status: " + task2Status);
