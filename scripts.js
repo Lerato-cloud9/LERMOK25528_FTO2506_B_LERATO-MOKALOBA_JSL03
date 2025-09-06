@@ -60,29 +60,21 @@ tasks.push({
 let newTaskCount = 0;
 
 while (newTaskCount < 3) {
-    let addMore = prompt("Do you want to add another task? (yes/no)").toLowerCase();
-
-}
+  let addMore = prompt("Do you want to add another task? (yes/no)").toLowerCase();
 
   if (addMore === "yes") {
     // Ask for new task details
     const newTitle = prompt("Enter task " + (tasks.length + 1) + " title:");
     const newDescription = prompt("Enter task " + (tasks.length + 1) + " description:");
     let newStatus = prompt("Enter task " + (tasks.length + 1) + " status (todo, doing, done):").toLowerCase();
-}
-  
-// Check if task1 is done, and log it if so
-if (task1Status === "done") {
-  console.log("Title: " + task1Title + ", status: " + task1Status);
-}
 
-//Validate status for new tasks
-while (newStatus !== "todo" && newStatus !== "doing" && newStatus !== "done") {
+    // Validate status
+    while (newStatus !== "todo" && newStatus !== "doing" && newStatus !== "done") {
       alert("Invalid status. Please enter 'todo', 'doing', or 'done'.");
       newStatus = prompt("Enter task " + (tasks.length + 1) + " status (todo, doing, done):").toLowerCase();
     }
 
-     // Store new task in the array
+    // Store new task in the array
     tasks.push({
       id: tasks.length + 1,
       title: newTitle,
@@ -90,7 +82,17 @@ while (newStatus !== "todo" && newStatus !== "doing" && newStatus !== "done") {
       status: newStatus
     });
 
-    // Alert if task limit reached
+    // Increment counter after successfully adding a task
+    newTaskCount++;
+
+  } else if (addMore === "no") {
+    break; // stop asking if user says no
+  } else {
+    alert("Please answer 'yes' or 'no'.");
+  }
+}
+
+// Alert if task limit reached
 if (newTaskCount === 3) {
   alert("There are enough tasks on your board, please check them in the console.");
 }
@@ -102,12 +104,14 @@ tasks.forEach(task => {
 });
 
 
-// Check if task2 is done, and log it if so
-if (task2Status === "done") {
-  console.log("Title: " + task2Title + ", status: " + task2Status);
-}
+// Filter and log only completed tasks (status: "done")
+const completedTasks = tasks.filter(task => task.status === "done");
 
-// If neither task1 nor task2 is done, show a motivational message
-if (task1Status !== "done" && task2Status !== "done") {
-  console.log("No tasks completed, let's get to work!");
+console.log("=== Completed Tasks ===");
+if (completedTasks.length === 0) {
+  console.log("No tasks completed yet.");
+} else {
+  completedTasks.forEach(task => {
+    console.log(`ID: ${task.id}, Title: ${task.title}, Description: ${task.description}`);
+  });
 }
