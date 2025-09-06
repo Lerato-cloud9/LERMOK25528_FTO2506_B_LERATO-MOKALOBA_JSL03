@@ -1,3 +1,6 @@
+//Store all tasks in an Array
+let tasks = []
+
 // Ask the user for the title and description of task 1
 const task1Title = prompt("Enter task 1 title:");
 const task1Description = prompt("Enter task 1 description:");
