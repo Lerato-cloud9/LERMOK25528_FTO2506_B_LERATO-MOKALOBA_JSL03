@@ -48,6 +48,14 @@ while (
   ).toLowerCase();
 }
 
+// Store task 2 in the array
+tasks.push({
+  id: 2,
+  title: task2Title,
+  description: task2Description,
+  status: task2Status
+});
+
 // Check if task1 is done, and log it if so
 if (task1Status === "done") {
   console.log("Title: " + task1Title + ", status: " + task1Status);
