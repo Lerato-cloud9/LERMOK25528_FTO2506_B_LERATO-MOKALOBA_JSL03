@@ -76,7 +76,7 @@ while (newTaskCount < 3) {
 
     // Store new task in the array
     tasks.push({
-      id: tasks.length + 1,
+      id: tasks.length > 0 ? tasks[tasks.length - 1].id + 1 : 1,
       title: newTitle,
       description: newDescription,
       status: newStatus
